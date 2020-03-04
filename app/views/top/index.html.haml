@@ -6,4 +6,8 @@
           %h2.list_header_title= list.title
           .list_header_action
             = link_to content_tag(:i, '', class: 'fas fa-trash'), list, method: :delete, data: { confirm: "#{list.title}を削除して大丈夫ですか？" }
+        .cardWrapper
+          .addCard
+            %i.far.fa-plus-square
+            = link_to "さらにカードを追加", new_list_card_path(list), class: "addCard_link"
 
