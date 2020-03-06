@@ -3,7 +3,7 @@ class CardController < ApplicationController
     @card = Card.new
     @list = List.find_by(id: params[:list_id])
   end
-  
+
   def create
     @card = Card.new(card_params)
     if @card.save
@@ -11,6 +11,10 @@ class CardController < ApplicationController
     else
       render action: :new
     end
+  end
+
+  def show
+    @card = Card.find_by(id: params[:id])
   end
 
   private
